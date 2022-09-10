@@ -1,9 +1,15 @@
+import model.Cliente;
 import model.Conta;
 
-public class CriarConta {
+public class TesteObjs {
     public static void main(String[] args) {
         Conta conta = new Conta();
-        conta.setSaldo(200);
+        conta.deposita(100);
+        System.out.println(conta.saca(101));
+
         System.out.println(conta.getSaldo());
     }
+
+
+
 }

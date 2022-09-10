@@ -3,10 +3,8 @@ package model;
 import java.util.UUID;
 
 public class Conta {
-    public double saldo;
-    public int agencia;
-    int numero;
-    String titular;
+    private double saldo;
+    private Cliente titular;
 
     public String deposita(double valor) {
         this.saldo += valor;
@@ -21,4 +19,19 @@ public class Conta {
         }
     }
 
+    public boolean transfere(double valor, Conta destino){
+        if(this.saldo>=valor){
+            this.saldo -= valor;
+            destino.deposita(valor);
+            return true;
+        }  return false;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 }
